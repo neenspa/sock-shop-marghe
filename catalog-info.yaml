@@ -1,0 +1,27 @@
+apiVersion: backstage.io/v1beta1
+kind: Component
+metadata:
+  name: sock-shop-marghe
+  metadata:
+  annotations:
+    argocd/app-name: sock-shop-marghe
+    backstage.io/adr-location: docs/adr
+    backstage.io/techdocs-ref: dir:.
+    backstage.io/kubernetes-id: sock-shop-marghe
+    backstage.io/kubernetes-namespace: sock-shop-marghe
+    github.com/project-slug: neenspa/sock-shop-marghe
+    janus-idp.io/tekton-enabled: 'true'
+  links:
+    - url: https://console-openshift-console.apps.democp.vega.local/pipelines/ns/sock-shop-marghe/
+      title: Pipelines
+      icon: web
+    - url: https://console-openshift-console.apps.democp.vega.local/k8s/ns/sock-shop-marghe/deployments/sock-shop-marghe
+      title: Deployment
+      icon: web
+    - url: https://devspaces.apps.democp.vega.local/#https://github.com/neenspa/sock-shop-marghe?che-editor=che-incubator/che-code/latest&devfilePath=.devfile-vscode.yaml
+      title: OpenShift Dev Spaces (VS Code)
+      icon: web
+spec:
+  type: website
+  owner: user:guest
+  lifecycle: production

@@ -1,0 +1,53 @@
+---
+kind: SecurityContextConstraints
+apiVersion: security.openshift.io/v1
+metadata:
+  name: sock-shop-marghe-scc-storeuser
+  labels:
+    backstage.io/kubernetes-id: sock-shop-marghe
+    app.kubernetes.io/name: sock-shop-marghe
+    rht-gitops.com/janus-argocd: sock-shop-marghe
+allowHostPID: false
+allowHostNetwork: false
+allowPrivilegeEscalation: true
+allowHostDirVolumePlugin: false
+allowHostIPC: false
+readOnlyRootFilesystem: false
+allowHostPorts: false
+allowPrivilegedContainer: false
+runAsUser:
+  type: MustRunAs
+  uid: 10001
+seLinuxContext:
+  type: RunAsAny
+fsGroup:
+  type: RunAsAny
+supplementalGroups:
+  type: RunAsAny
+users:
+  - system:serviceaccount:sock-shop-marghe:storeuser-sa
+---
+kind: SecurityContextConstraints
+apiVersion: security.openshift.io/v1
+metadata:
+  name: sock-shop-marghe-scc-storeuseradmin
+  annotations:
+    backstage.io/kubernetes-id: sock-shop-marghe
+allowHostPID: false
+allowHostNetwork: false
+allowPrivilegeEscalation: true
+allowHostDirVolumePlugin: false
+allowHostIPC: false
+readOnlyRootFilesystem: false
+allowHostPorts: false
+allowPrivilegedContainer: false
+runAsUser:
+  type: RunAsAny
+seLinuxContext:
+  type: RunAsAny
+fsGroup:
+  type: RunAsAny
+supplementalGroups:
+  type: RunAsAny
+users:
+  - system:serviceaccount:sock-shop-marghe:storeuseradmin-sa

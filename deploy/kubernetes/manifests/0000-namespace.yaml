@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: sock-shop-marghe
+  labels:
+    backstage.io/kubernetes-id: sock-shop-marghe
+    app.kubernetes.io/name: sock-shop-marghe
+    rht-gitops.com/janus-argocd: sock-shop-marghe
+spec:
